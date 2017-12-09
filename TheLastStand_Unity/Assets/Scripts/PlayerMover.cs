@@ -36,6 +36,12 @@ public class PlayerMover : MonoBehaviour {
 			transform.rotation = Quaternion.Euler(y , transform.rotation.eulerAngles.y , y);
 			//transform.rotation = Quaternion.FromToRotation(inputVector , transform.forward);
 		}
+		if (Input.GetKeyDown (KeyCode.Joystick1Button1))
+		{	
+
+			transform.Translate(0,0,50 *Time.deltaTime);
+			//controller.Move(player.z * Time.deltaTime);
+		}
 
 
 	}
