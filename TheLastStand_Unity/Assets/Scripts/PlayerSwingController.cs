@@ -30,7 +30,7 @@ public class PlayerSwingController : MonoBehaviour {
 		PlayerVerAttack = false;
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		float t = Input.GetAxis ("RightTrigger");
@@ -38,7 +38,7 @@ public class PlayerSwingController : MonoBehaviour {
 		float y = Input.GetAxis("5th axis");
 		//Debug.Log (t); //debug right trigger
 		if (t < -0.80 && PlayerSwingisIdle == false) { //initiate swing
-			Debug.Log("P1 Swing");
+			Debug.Log("P2 Swing");
 
 
 			characteranim.Play ("");
@@ -51,26 +51,26 @@ public class PlayerSwingController : MonoBehaviour {
 				PlayerVerAttack = true;
 
 			} 
-				if (PlayerSwingisRight == true) {
-					characteranim.Play ("rightattack");
+			if (PlayerSwingisRight == true) {
+				characteranim.Play ("rightattack");
 				PlayerSwingisRight = false;
 				PlayerSwingisIdle = true;
 				PlayerHorAttack = true;
 
-				} 
-					if (PlayerSwingisLeft == true) {
-						characteranim.Play ("leftattack");
+			} 
+			if (PlayerSwingisLeft == true) {
+				characteranim.Play ("leftattack");
 				PlayerSwingisLeft = false;
 				PlayerSwingisIdle = true;
 				PlayerHorAttack = true;
-					} 
-						if (PlayerSwingisDown == true) {
-							characteranim.Play ("downattack");
+			} 
+			if (PlayerSwingisDown == true) {
+				characteranim.Play ("downattack");
 				PlayerSwingisDown = false;
 				PlayerSwingisIdle = true;
 				PlayerVerAttack = true;
-						} 
-			}
+			} 
+		}
 
 		//Debug.Log ("PlayerHorAttack" + PlayerHorAttack);
 		//Debug.Log ("PlayerSwingIdle" + PlayerSwingisIdle);
@@ -88,7 +88,7 @@ public class PlayerSwingController : MonoBehaviour {
 			PlayerSwingisRight = false;
 			PlayerSwingisLeft = false;
 
-	
+
 			if (PlayerSwingisIdle == true) {
 				characteranim.Play ("idle");
 				PlayerHorAttack = false;
@@ -100,9 +100,12 @@ public class PlayerSwingController : MonoBehaviour {
 			//PlayerSwingisIdle = false;
 		}
 		//right swing
-		if (x == 1 && PlayerSwingisIdle == true  && PlayerSwingisRight == false) {
+		if (x == 1   && PlayerSwingisRight == false) {
 			PlayerSwingisRight = true;
 			PlayerSwingisIdle = false;
+			PlayerSwingisDown = false;
+			PlayerSwingisUp = false;
+			PlayerSwingisLeft = false;
 			PlayerHorAttack = false;
 			PlayerVerAttack = false;
 			//play anim
@@ -111,9 +114,12 @@ public class PlayerSwingController : MonoBehaviour {
 		}
 
 		//left swing
-		if (x == -1  && PlayerSwingisIdle == true && PlayerSwingisLeft == false) {
+		if (x == -1  && PlayerSwingisLeft == false) {
 			PlayerSwingisLeft = true;
 			PlayerSwingisIdle = false;
+			PlayerSwingisDown = false;
+			PlayerSwingisUp = false;
+			PlayerSwingisRight = false;
 			PlayerHorAttack = false;
 			PlayerVerAttack = false;
 			//play anim
@@ -122,9 +128,12 @@ public class PlayerSwingController : MonoBehaviour {
 		}
 
 		//up swing
-		if (y == -1 && PlayerSwingisIdle == true && PlayerSwingisUp == false) {
+		if (y == -1  && PlayerSwingisUp == false) {
 			PlayerSwingisUp = true;
 			PlayerSwingisIdle = false;
+			PlayerSwingisDown = false;
+			PlayerSwingisRight = false;
+			PlayerSwingisLeft = false;
 			PlayerHorAttack = false;
 			PlayerVerAttack = false;
 			//play anim
@@ -135,9 +144,11 @@ public class PlayerSwingController : MonoBehaviour {
 
 
 		//down swing
-		if (y == 1 && PlayerSwingisIdle == true && PlayerSwingisDown == false) {
+		if (y == 1  && PlayerSwingisDown == false) {
 			PlayerSwingisDown = true;
 			PlayerSwingisIdle = false;
+			PlayerSwingisUp = false;
+			PlayerSwingisLeft = false;
 			PlayerHorAttack = false;
 			PlayerVerAttack = false;
 			//play anim
@@ -152,6 +163,10 @@ public class PlayerSwingController : MonoBehaviour {
 	{
 		PlayerHorAttack = false;
 		PlayerVerAttack = false;
+		PlayerSwingisUp = false;
+		PlayerSwingisDown = false;
+		PlayerSwingisRight = false;
+		PlayerSwingisLeft = false;
 		PlayerSwingisIdle = true;
 
 	}

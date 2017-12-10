@@ -18,7 +18,7 @@ public class Player2Mover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		CharacterController controller = GetComponent<CharacterController>();
+		CharacterController controller2 = GetComponent<CharacterController>();
 
 		float x = Input.GetAxis("HorizontalP2");
 		float y = 0f;
@@ -30,11 +30,17 @@ public class Player2Mover : MonoBehaviour {
 		Vector3 rotationVector = mainCamera.transform.TransformDirection(x, 0f, z);
 		inputVector *= moveSpeed;
 
-		controller.SimpleMove(inputVector); 
+		controller2.SimpleMove(inputVector); 
 		if (inputVector != Vector3.zero){
 			transform.rotation = Quaternion.Slerp(transform.rotation,  Quaternion.LookRotation(rotationVector),  Time.deltaTime * 20); // What this means is that it is rotating FROM the first parameter to the second at the pace of the third parameter        
 			transform.rotation = Quaternion.Euler(y , transform.rotation.eulerAngles.y , y);
 			//transform.rotation = Quaternion.FromToRotation(inputVector , transform.forward);
+		}
+		if (Input.GetKeyDown (KeyCode.Joystick2Button1))
+		{	
+
+			transform.Translate(0,0,50 *Time.deltaTime);
+			//controller.Move(player.z * Time.deltaTime);
 		}
 
 
