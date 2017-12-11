@@ -13,6 +13,7 @@ public class gamedir : MonoBehaviour {
 	public bool p2exists;
 	private	GameObject p1charspawn;
 	private GameObject p2charspawn;
+	public GameObject gamedirect;
 	// Use this for initialization
 	void Start () {
 		player1start = player1.transform.position;
@@ -21,26 +22,31 @@ public class gamedir : MonoBehaviour {
 		player2startrot = player2.transform.rotation.eulerAngles;
 	 p1charspawn = Instantiate(player1, player1start, transform.rotation);
 	 p2charspawn = Instantiate(player2, player2start, transform.rotation);
-		//p1exists = true;
-		//p2exists = true;
+		p1exists = true;
+		p2exists = true;
 
 	}
 
 	// Update is called once per frame
 	void Update () {
+
 		//p1exists = player1.GetComponent<P1killed> ().p1alive;
 		//p2exists = player2.GetComponent<P2killed> ().p2alive;
-		if (player1 == null) {
+		if (p1exists == false) {
 			
 			Debug.Log ("P1 exists");
-			Instantiate(p1charspawn, player1start, transform.rotation);
-			//p1exists = true;
+			Instantiate(player1, player1start, transform.rotation);
+			gamedirect.GetComponent<scorecounter> ().p2score += 1;
+			gamedirect.GetComponent<scorecounter> ().bodycount += 1;
+			p1exists = true;
 		}
-		if (player2 == null) {
+		if (p2exists == false) {
 
 			Debug.Log ("P2 exists");
-			Instantiate(p2charspawn, player2start, transform.rotation);
-			//p2exists = true;
+			Instantiate(player2, player2start, transform.rotation);
+			gamedirect.GetComponent<scorecounter> ().p1score += 1;
+			gamedirect.GetComponent<scorecounter> ().bodycount += 1;
+			p2exists = true;
 		}
 		
 	}

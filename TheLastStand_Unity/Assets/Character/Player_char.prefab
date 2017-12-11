@@ -4890,9 +4890,13 @@ MonoBehaviour:
   object2: {fileID: 1824262406781322, guid: 8090a18b5caf1df4d92d852cf3cdb71b, type: 2}
   object3: {fileID: 1966772351440460, guid: b6c4bfe1e46643e43a603907e4224cee, type: 2}
   object4: {fileID: 1318347080529106, guid: e7d086e0fb6deb343adae1ed29902d81, type: 2}
-  player2: {fileID: 1261243718855928, guid: c6a696fa27b6cfe47b780d86a051aabf, type: 2}
-  player2horattacking: 0
-  player2verattacking: 0
+  bloodpart: {fileID: 1270754359340914, guid: c013efe81b9c68b43b5ccc1b61c23589, type: 2}
+  bloodpartvert: {fileID: 1849368884911434, guid: f3e5b49c0a355974bb53e95b1bdf744e,
+    type: 2}
+  player: {fileID: 0}
+  gamedirect: {fileID: 0}
+  playerhorattacking: 0
+  playerverattacking: 0
   p1alive: 0
 --- !u!114 &114282676020071786
 MonoBehaviour:

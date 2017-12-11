@@ -38,7 +38,7 @@ public class PlayerSwingController : MonoBehaviour {
 		float y = Input.GetAxis("5th axis");
 		//Debug.Log (t); //debug right trigger
 		if (t < -0.80 && PlayerSwingisIdle == false) { //initiate swing
-			Debug.Log("P2 Swing");
+			Debug.Log("P1 Swing");
 
 
 			characteranim.Play ("");
