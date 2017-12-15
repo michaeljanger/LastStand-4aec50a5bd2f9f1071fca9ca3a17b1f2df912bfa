@@ -14,6 +14,8 @@ public class P1killed : MonoBehaviour {
 	public bool playerhorattacking; //player 2 attacking p1
 	public bool playerverattacking;
 	public bool p1alive;
+	private GameObject enemy;
+	private bool enemyattacking;
 	// Use this for initialization
 	void Start () {
 		p1alive = true;
@@ -24,6 +26,8 @@ public class P1killed : MonoBehaviour {
 	void Update () {
 		player = GameObject.FindGameObjectWithTag ("Player2");
 		gamedirect = GameObject.FindGameObjectWithTag ("Respawn");
+		enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		enemyattacking = enemy.GetComponent<EnemyFollow> ().isattacking;
 	}
 	void OnTriggerEnter(Collider other){
 
@@ -54,6 +58,20 @@ public class P1killed : MonoBehaviour {
 			gamedirect.GetComponent<gamedir> ().p1exists = false;
 			Destroy(gameObject);
 			p1alive = false;
+		}
+
+		//killed by enemy
+		if (p1alive == true &&  other.gameObject.CompareTag("Enemy") && enemyattacking == true)
+		{
+
+			Debug.Log ("killed p1");
+			Instantiate(object1, transform.position, transform.rotation);
+			Instantiate(object2, transform.position, transform.rotation);
+			Instantiate(bloodpart, transform.position, transform.rotation);
+			p1alive = false;
+			gamedirect.GetComponent<gamedir> ().p1exists = false;
+			Destroy(gameObject);
+
 		}
 	}
 }

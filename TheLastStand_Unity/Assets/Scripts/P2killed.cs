@@ -55,5 +55,19 @@ public class P2killed : MonoBehaviour {
 			Destroy(gameObject);
 			p2alive = false;
 		}
+
+		//enemy kills p2
+		if (p2alive == true && other.gameObject.CompareTag("Enemy"))
+		{
+
+			Debug.Log ("killed p2");
+			Instantiate(object1, transform.position, transform.rotation);
+			Instantiate(object2, transform.position, transform.rotation);
+			Instantiate(bloodpart, transform.position, transform.rotation);
+			p2alive = false;
+			gamedirect.GetComponent<gamedir> ().p2exists = false;
+			Destroy(gameObject);
+
+		}
 	}
 }

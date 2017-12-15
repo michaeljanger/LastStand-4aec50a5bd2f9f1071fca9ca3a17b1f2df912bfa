@@ -16,10 +16,10 @@ public class killed : MonoBehaviour {
 	public bool player2horattacking;
 	public bool player2verattacking;
 	public bool enemyalive;
-	public GameObject gamedirect;
+	private GameObject gamedirect;
 	// Use this for initialization
 	void Start () {
-
+		gamedirect = GameObject.FindGameObjectWithTag ("Respawn");
 		enemyalive = true;
 	}
 

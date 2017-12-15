@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4864599534644620}
   - component: {fileID: 114662280825100246}
+  - component: {fileID: 114134109780506554}
   m_Layer: 0
   m_Name: GameDirector
   m_TagString: Untagged
@@ -40,6 +41,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114134109780506554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1919827287210528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cd9b7f09dde584ab2f5757d0af94c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p1score: 0
+  p2score: 0
+  bodycount: 41
+  gamedirect: {fileID: 1919827287210528}
+  P1Count: {fileID: 114599591916897482, guid: 3e6e23065100e2b428393f73549d831b, type: 2}
+  P2Count: {fileID: 114339990602974004, guid: 3e6e23065100e2b428393f73549d831b, type: 2}
+  BodyCount: {fileID: 114013850847812690, guid: 3e6e23065100e2b428393f73549d831b,
+    type: 2}
 --- !u!114 &114662280825100246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,3 +75,4 @@ MonoBehaviour:
   player2: {fileID: 1261243718855928, guid: c6a696fa27b6cfe47b780d86a051aabf, type: 2}
   p1exists: 0
   p2exists: 0
+  gamedirect: {fileID: 1919827287210528}

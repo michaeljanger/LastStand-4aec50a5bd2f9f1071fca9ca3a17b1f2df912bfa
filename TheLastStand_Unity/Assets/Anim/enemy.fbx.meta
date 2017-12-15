@@ -165,6 +165,7 @@ ModelImporter:
     100314: eye.l
     100316: eye.r
     100318: trousers_and_shoes
+    100320: shirt
     400000: char
     400002: char.hair
     400004: Character1_Ctrl_ChestEndEffector
@@ -325,11 +326,13 @@ ModelImporter:
     400314: eye.l
     400316: eye.r
     400318: trousers_and_shoes
+    400320: shirt
     4300000: trousers_and_shoes
     4300002: eye.l
     4300004: char
     4300006: eye.r
     4300008: char.hair
+    4300010: shirt
     7400000: Take 001
     9500000: //RootNode
     13700000: char
@@ -337,6 +340,7 @@ ModelImporter:
     13700004: eye.l
     13700006: eye.r
     13700008: trousers_and_shoes
+    13700010: shirt
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -348,6 +352,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: mat_hair
     second: {fileID: 2100000, guid: f8910e631ab0ec34faa485f7ac151f6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_shirt_and_tie
+    second: {fileID: 2100000, guid: d6ba66c18c6e0794f9919170a35f5d2a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
